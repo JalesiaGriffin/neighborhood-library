@@ -17,28 +17,30 @@ public class NeighborhoodLibrary {
         books[4] = new Book(369, "mno-759-57dn", "Embarrased Man", true, "William Williams");
 
 
-        // Methods
+        // Calling Methods
         homeScreen(scan);
     }
 
     public static void homeScreen(Scanner scan) {
         while (true) {
-            System.out.println("Home Screen");
+            System.out.println("\nHome Screen");
             System.out.println("\n(1) Show Available Books");
             System.out.println("(2) Show Checked Out Books");
             System.out.println("(3) Exit");
-            System.out.println("Please select an option.");
+            System.out.print("\nPlease select an option: ");
             int selection = scan.nextInt();
 
             switch(selection) {
                 case 1:
+                    System.out.println("\nAvailable Books:");
                     showAvailableBooks();
                     break;
                 case 2:
+                    System.out.println("\nChecked Out Books:");
                     showCheckedOutBooks();
                     break;
                 case 3:
-                    System.out.println("Goodbye.");
+                    System.out.println("\nGoodbye.");
                     return;
                 default:
                     System.out.println("Invalid Response");
