@@ -66,8 +66,7 @@ public class Book {
                 "id: " + id +
                 ", isbn: '" + isbn + '\'' +
                 ", title: '" + title + '\'' +
-                ", isCheckedOut: " + isCheckedOut +
-                ", checkedOutTo: '" + checkedOutTo + '\'' +
+                ", checked out to: '" + checkedOutTo + '\'' +
                 '}';
     }
 

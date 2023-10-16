@@ -33,7 +33,7 @@ public class NeighborhoodLibrary {
             switch(selection) {
                 case 1:
                     System.out.println("\nAvailable Books:");
-                    showAvailableBooks();
+                    showAvailableBooks(scan);
                     break;
                 case 2:
                     System.out.println("\nChecked Out Books:");
@@ -48,9 +48,35 @@ public class NeighborhoodLibrary {
         }
     }
 
-    public static void showAvailableBooks() {
+    public static void showAvailableBooks(Scanner scan) {
+        // Print out book properties
         for (int i = 0; i < numOfBooks; i++) {
             System.out.println(books[i].toString());
+        }
+        while (true) {
+            //Check out or exit back to home screen
+            System.out.println("(1) Check Out");
+            System.out.println("(2) Return Home");
+            int selection = scan.nextInt();
+            scan.nextLine();
+
+            if (selection == 1) {
+                System.out.print("Which title are you checking out? ");
+                String bookTitle = scan.nextLine();
+
+                System.out.print("Enter your name: ");
+                String name = scan.nextLine();
+
+
+                for (int i = 0; i < numOfBooks; i++) {
+                    if (books[i].getTitle().equalsIgnoreCase(bookTitle)) {
+                        books[i].checkOut(name);
+                        System.out.println("\n" + books[i].getCheckedOutTo() + " has checked out " + books[i].getTitle() + "\n");
+                    }
+                }
+            } else if (selection == 2) {
+                return;
+            }
         }
     }
 
