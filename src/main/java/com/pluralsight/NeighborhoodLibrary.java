@@ -37,7 +37,7 @@ public class NeighborhoodLibrary {
                     break;
                 case 2:
                     System.out.println("\nChecked Out Books:");
-                    showCheckedOutBooks();
+                    showCheckedOutBooks(scan);
                     break;
                 case 3:
                     System.out.println("\nGoodbye.");
@@ -66,8 +66,7 @@ public class NeighborhoodLibrary {
 
                 System.out.print("Enter your name: ");
                 String name = scan.nextLine();
-
-
+                // check out
                 for (int i = 0; i < numOfBooks; i++) {
                     if (books[i].getTitle().equalsIgnoreCase(bookTitle)) {
                         books[i].checkOut(name);
@@ -80,10 +79,32 @@ public class NeighborhoodLibrary {
         }
     }
 
-    public static void showCheckedOutBooks() {
+    public static void showCheckedOutBooks(Scanner scan) {
         for (int i = 0; i < numOfBooks; i++) {
             if(books[i].isCheckedOut() == true){
                 System.out.println(books[i]);
+            }
+        }
+        // Prompt user to select book or checkout
+        while (true) {
+            System.out.println("\nC - Check In Book");
+            System.out.println("X - Home");
+            System.out.println("Please select an option: ");
+            String userChoice = scan.nextLine();
+
+            if (userChoice.equalsIgnoreCase("C")) {
+                System.out.println("Enter the Book ID: ");
+                int bookId = scan.nextInt();
+                scan.nextLine();
+
+                for (int i = 0; i < numOfBooks; i++) {
+                    if (bookId == books[i].getId()) {
+                        books[i].checkIn();
+                        System.out.println("Thank you for returning " + books[i].getTitle());
+                    }
+                }
+            } else if (userChoice.equalsIgnoreCase("X")) {
+                return;
             }
         }
     }
