@@ -8,8 +8,6 @@ public class Book {
     private String checkedOutTo;
 
     //Constructor
-
-
     public Book(int id, String isbn, String title, boolean isCheckedOut, String checkedOutTo) {
         this.id = id;
         this.isbn = isbn;
