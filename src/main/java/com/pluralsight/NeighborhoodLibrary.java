@@ -14,7 +14,7 @@ public class NeighborhoodLibrary {
         books[1] = new Book(456, "def-753-87dn", "Sad Man", true, "Yami Sukehiro");
         books[2] = new Book(789, "ghi-852-77dn", "Angry Man", false, "");
         books[3] = new Book(246,"jkl-153-67dn", "Hopeful Man", false, "");
-        books[4] = new Book(369, "mno-759-57dn", "Embarrased Man", true, "William Williams");
+        books[4] = new Book(369, "mno-759-57dn", "Embarrassed Man", true, "William Williams");
 
         // Calling Methods
         homeScreen(scan);
