@@ -57,7 +57,7 @@ public class NeighborhoodLibrary {
         }
         while (true) {
             //Check out or exit back to home screen
-            System.out.println("(1) Check Out");
+            System.out.println("\n(1) Check Out");
             System.out.println("(2) Return Home");
             System.out.print("\nPlease select an option: ");
             int selection = scan.nextInt();
